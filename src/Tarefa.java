@@ -28,7 +28,7 @@ class Program {
         System.out.print("\nTítulo da tarefa: ");
         String titulo = sc.nextLine();
 
-        if (titulo == null || titulo.isBlank()) {
+        if (titulo.isBlank()) {
             System.out.println("Título não pode ser vazio.");
             return;
         }
