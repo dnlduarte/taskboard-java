@@ -51,19 +51,31 @@ class Program {
     }
 
     static void listar(){
-        System.out.println("Listar tarefa");
+        System.out.println("Voce tem " + tarefas.size() + " tarefa(s).");
+
+        System.out.println("Deseja visualizalas (s/n)?");
+        String visualizar = sc.nextLine();
+
+        if (visualizar.equals("s")) {
+            for (Tarefa t : tarefas) {
+                System.out.println(t.getId() + " - " + t.getTitulo());
+            }
+        }
+
+
     }
 
     public static void main(String[] args){
 
         while (true) {
-            System.out.println("=== GERENCIADOR DE TAREFAS ===");
+            System.out.println("\n=== GERENCIADOR DE TAREFAS ===");
             System.out.println("1 - Adicionar uma Tarefa ");
             System.out.println("2 - Excluir as Tarefas");
             System.out.println("3 - Editar uma Tarefa");
             System.out.println("4 - Listar uma Tarefa");
             System.out.println("5 - Sair");
 
+            System.out.println("\nDigite uma opção: ");
             int opcao = sc.nextInt();
             sc.nextLine(); // limpa buffer
 
