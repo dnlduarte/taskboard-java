@@ -43,14 +43,22 @@ class Program {
     }
 
     static void excluir(){
+        boolean achou = false;
+
         System.out.println("\nDigite o ID da tarefa pra excluila: ");
         int excluir = sc.nextInt();
+        sc.nextLine();
 
         for (Tarefa t: tarefas){
             if (t.getId() == excluir) {
                 tarefas.remove(t);
+                achou = true;
                 break;
             }
+        }
+
+        if (!achou){
+            System.out.println("ID não encontrado.");
         }
     }
 
