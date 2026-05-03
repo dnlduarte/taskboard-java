@@ -55,7 +55,19 @@ class Program {
     }
 
     static void editar(){
-        System.out.println("\nEditar tarefa");
+        System.out.println("\nDigite o ID da tarefa pra alterala: ");
+        int alterar = sc.nextInt();
+        sc.nextLine(); // limpa buffer
+
+        System.out.println("Digite o novo título: ");
+        String novoTitulo = sc.nextLine();
+
+        for (Tarefa t: tarefas){
+            if (t.getId() == alterar) {
+                t.setTitulo(novoTitulo);
+                break;
+            }
+        }
     }
 
     static void listar(){
