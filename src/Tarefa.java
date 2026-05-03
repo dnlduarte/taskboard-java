@@ -43,15 +43,23 @@ class Program {
     }
 
     static void excluir(){
-        System.out.println("Excluir tarefa");
+        System.out.println("\nDigite o ID da tarefa pra excluila: ");
+        int excluir = sc.nextInt();
+
+        for (Tarefa t: tarefas){
+            if (t.getId() == excluir) {
+                tarefas.remove(t);
+                break;
+            }
+        }
     }
 
     static void editar(){
-        System.out.println("Editar tarefa");
+        System.out.println("\nEditar tarefa");
     }
 
     static void listar(){
-        System.out.println("Voce tem " + tarefas.size() + " tarefa(s).");
+        System.out.println("\nVoce tem " + tarefas.size() + " tarefa(s).");
 
         System.out.println("Deseja visualizalas (s/n)?");
         String visualizar = sc.nextLine();
@@ -61,8 +69,6 @@ class Program {
                 System.out.println(t.getId() + " - " + t.getTitulo());
             }
         }
-
-
     }
 
     public static void main(String[] args){
